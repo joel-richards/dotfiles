@@ -31,6 +31,8 @@ return require('packer').startup(function(use)
 
     -- LSP
     use 'neovim/nvim-lspconfig'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'williamboman/mason.nvim'
     use ({
         "hrsh7th/nvim-cmp",
         requires = {
@@ -39,8 +41,11 @@ return require('packer').startup(function(use)
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lua",
             "onsails/lspkind-nvim",
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip'
         }
     })
+    use("williamboman/nvim-lsp-installer")
 
     -- bufferline
     use {
@@ -54,5 +59,14 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         require = { 'kyazdani42/nvim-web-devicons', opt = true}
     }
+
+    -- git line highlighting
+    use {
+        'lewis6991/gitsigns.nvim'
+    }
+
+    -- util
+    use { 'numToStr/Comment.nvim' }
+    use { 'windwp/nvim-autopairs' }
 end)
 

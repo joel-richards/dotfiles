@@ -4,7 +4,7 @@ require('bufferline').setup {
     options = {
         mode = "buffers", -- set to "tabs" to only show tabpages instead
         indicator = 'underline',
-        separator_style = 'slant',
+        separator_style = 'thin',
         modified_icon = '●',
         close_icon = '',
         left_trunc_marker = '',
@@ -19,6 +19,16 @@ require('bufferline').setup {
         },
         color_icons = true, -- whether or not to add the filetype icon highlights
         show_close_icon = true,
-        always_show_bufferline = true
+        always_show_bufferline = true,
+        highlights = {
+            buffer_selected = {
+                bold = true,
+                italic = false
+            },
+            tab_selected = {
+                bold = true,
+                italic = false
+            }
+        }
     }
 }
